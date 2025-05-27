@@ -1,0 +1,22 @@
+query getCountryStatsPerYear($countryId: Int!) {
+  getCountryStatsPerYear(countryId: $countryId) {
+    years {
+      yearDate
+      generalStats {
+        wins
+        losses
+        draws
+      }
+      homeStats {
+        wins
+        losses
+        draws
+      }
+      awayStats {
+        wins
+        losses
+        draws
+      }
+    }
+  }
+}

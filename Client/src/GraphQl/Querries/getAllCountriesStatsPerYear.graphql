@@ -1,0 +1,28 @@
+query getAllCountriesStatsPerYear($year: Int!) {
+  getAllCountriesStatsPerYear(year: $year) {
+    countriesStats {
+      countryDetails {
+        regionName
+        status
+        developedStatus
+        displayName
+        population
+      }
+      generalStats {
+        wins
+        losses
+        draws
+      }
+      homeStats {
+        wins
+        losses
+        draws
+      }
+      awayStats {
+        wins
+        losses
+        draws
+      }
+    }
+  }
+}

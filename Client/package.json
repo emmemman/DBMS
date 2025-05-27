@@ -1,0 +1,47 @@
+{
+  "name": "database-visualiser",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "codegen": "graphql-codegen --config codegen.ts"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.13.8",
+    "@graphql-codegen/typescript-operations": "^4.6.0",
+    "@graphql-codegen/typescript-react-query": "^6.1.0",
+    "@rollup/plugin-graphql": "^2.0.5",
+    "antd": "^5.24.9",
+    "echarts-for-react": "^3.0.2",
+    "graphql": "^16.11.0",
+    "graphql-tag": "^2.12.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.5.3"
+  },
+  "devDependencies": {
+    "@0no-co/graphqlsp": "^1.12.16",
+    "@eslint/js": "^9.22.0",
+    "@graphql-codegen/cli": "^5.0.5",
+    "@graphql-codegen/client-preset": "4.8.0",
+    "@graphql-codegen/typescript": "^4.1.6",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.2",
+    "@graphql-codegen/typescript-resolvers": "^4.5.0",
+    "@parcel/watcher": "^2.5.1",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.22.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "graphql-codegen-typescript-validation-schema": "^0.17.1",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.26.1",
+    "vite": "^6.3.1"
+  }
+}

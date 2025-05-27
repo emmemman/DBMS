@@ -1,0 +1,8 @@
+query getAllScorers {
+  getAllScorers {
+    scorers {
+      scorerId
+      scorerName
+    }
+  }
+}
