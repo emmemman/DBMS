@@ -1,0 +1,136 @@
+# Country Type
+
+# Query Type
+type Query {
+  getCountry(name: String!): [Country!]!
+  getCountryStats: [CountryStats!]!
+  getAllCountries: CountriesIDNAME!
+  getCountryStatsPerYear(countryId: Int!): CountryStatsPerYear!
+  getAllCountriesStatsPerYear(year: Int!): CountriesStatsPerYear!
+  getAllMatchesByCountryId(countryId: Int!): MatchesByCountryId!
+  getAllMatchesPerYearWithDetails(year: Int!): MatchesByCountryId!
+  getMatchStatsPerYear(year: Int!): MatchStatsPerYear!
+  getAllYearsRegistered: Years!
+  getGlobalScoringStats: GlobalScoringStats!
+  getScorerStatsById(scorerId: Int!): ScorerStats!
+  getAllScorers: AllScorersIDNAME!
+}
+
+type Country {
+  country_id: Int!
+  iso_code: String!
+  iso3_code: String!
+  display_name: String!
+  region_name: String
+  status: String
+  developed_status: String
+  population: Int
+}
+
+# CountryStats Type
+type CountryStats {
+  country_stat_id: Int!
+  country_id: Int!
+  country_name: String
+  match_year: Int
+  wins: Int
+  losses: Int
+  draws: Int
+  home_wins: Int
+  home_losses: Int
+  home_draws: Int
+  away_wins: Int
+  away_losses: Int
+  away_draws: Int
+}
+type GeneralCountryYearStats {
+  yearDate: String
+  generalStats: CountryWLDStats
+  homeStats: CountryWLDStats
+  awayStats: CountryWLDStats
+}
+type CountryStatsPerYear {
+  years: [GeneralCountryYearStats]
+}
+type CountryWLDStats {
+  wins: Int!
+  losses: Int!
+  draws: Int!
+}
+type CountryIdNameCombination {
+  countryId: Int!
+  countryName: String!
+}
+type CountriesIDNAME {
+  countries: [CountryIdNameCombination!]
+}
+
+type Matches {
+  matchDate: String!
+  homeTeam: Team!
+  awayTeam: Team!
+  homeScore: Int!
+  awayScore: Int!
+  tournament: String!
+  city: String!
+  country: String!
+}
+type MatchesByCountryId {
+  matches: [Matches]
+}
+type Team {
+  regionName: String!
+  status: String!
+  developedStatus: String!
+  displayName: String
+  population: Int
+}
+type MatchStatsPerYear {
+  matchesNumber: Int
+  matchesWithShootouts: Int
+  draws: Int
+  friendlyMatches: Int
+}
+
+type countryStats {
+  countryDetails: Team!
+  generalStats: CountryWLDStats!
+  homeStats: CountryWLDStats!
+  awayStats: CountryWLDStats!
+}
+type CountriesStatsPerYear {
+  countriesStats: [countryStats]
+}
+type Years {
+  years: [String]
+}
+type CountryScoringStats {
+  countryDetails: Team!
+  totalWins: Int!
+  score: Int!
+  averageWinsPerYear: Float!
+  averageScorePerYear: Float!
+}
+type GlobalScoringStats {
+  scoringStats: [CountryScoringStats]
+}
+type ScorerStatsByYear {
+  year: Int!
+  totalGoals: Int!
+  teamTotalMatches: Int!
+}
+type ScorerStats {
+  scorerId: Int
+  scorerName: String!
+  teamDetails: Team!
+  mostGoalsScored: Int!
+  statsByYear: [ScorerStatsByYear!]!
+}
+
+type ScorerIDNAME {
+  scorerId: Int!
+  scorerName: String!
+}
+type AllScorersIDNAME {
+  scorers: [ScorerIDNAME!]
+}

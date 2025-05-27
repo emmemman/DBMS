@@ -1,0 +1,26 @@
+query getAllMatchesByCountryId($countryId: Int!) {
+  getAllMatchesByCountryId(countryId: $countryId) {
+    matches {
+      matchDate
+      homeTeam {
+        regionName
+        status
+        developedStatus
+        displayName
+        population
+      }
+      awayTeam {
+        regionName
+        status
+        developedStatus
+        displayName
+        population
+      }
+      homeScore
+      awayScore
+      tournament
+      city
+      country
+    }
+  }
+}

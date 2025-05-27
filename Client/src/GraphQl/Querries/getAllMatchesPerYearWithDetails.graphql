@@ -1,0 +1,26 @@
+query getAllMatchesPerYearWithDetails($year: Int!) {
+  getAllMatchesPerYearWithDetails(year: $year) {
+    matches {
+      matchDate
+      homeTeam {
+        regionName
+        status
+        developedStatus
+        displayName
+        population
+      }
+      awayTeam {
+        regionName
+        status
+        developedStatus
+        displayName
+        population
+      }
+      homeScore
+      awayScore
+      tournament
+      city
+      country
+    }
+  }
+}

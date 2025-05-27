@@ -1,0 +1,19 @@
+query getScorerStatsById($scorerId: Int!) {
+  getScorerStatsById(scorerId: $scorerId) {
+    scorerId
+    scorerName
+    teamDetails {
+      regionName
+      status
+      developedStatus
+      displayName
+      population
+    }
+    mostGoalsScored
+    statsByYear {
+      year
+      totalGoals
+      teamTotalMatches
+    }
+  }
+}

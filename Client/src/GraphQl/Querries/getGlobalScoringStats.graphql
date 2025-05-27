@@ -1,0 +1,17 @@
+query getGlobalScoringStats {
+  getGlobalScoringStats {
+    scoringStats {
+      countryDetails {
+        regionName
+        status
+        developedStatus
+        displayName
+        population
+      }
+      totalWins
+      score
+      averageWinsPerYear
+      averageScorePerYear
+    }
+  }
+}

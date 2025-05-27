@@ -1,0 +1,5 @@
+query getAllYearsRegistered {
+  getAllYearsRegistered {
+    years
+  }
+}

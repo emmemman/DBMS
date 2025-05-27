@@ -1,0 +1,8 @@
+query getMatchStatsPerYear($year: Int!) {
+  getMatchStatsPerYear(year: $year) {
+    matchesNumber
+    matchesWithShootouts
+    draws
+    friendlyMatches
+  }
+}
